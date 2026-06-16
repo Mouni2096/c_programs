@@ -1,0 +1,218 @@
+//enum weekdays
+#include <stdio.h>
+enum weekdays{monday,tuesday,wednesday,thrusday,friday,saturday,sunday};
+int main(){
+    enum weekdays w;
+    w = wednesday;
+    printf("%d",w);
+    return 0;
+}
+
+
+//enum colour values
+#include <stdio.h>
+enum colours{red=10,green=20,blue=25};
+int main(){
+    enum colours;
+    printf("%d\n%d\n%d\n",red,green,blue);
+    return 0;
+}
+
+
+//enum get colur
+#include <stdio.h>
+enum colours{red,green,blue};
+int main(){
+    int n;
+    enum colours;
+    printf("Enter a number(0-2)");
+    scanf("%d",&n);
+    switch(n){
+        case red:
+        printf("The colour is red");
+        break;
+        case blue:
+        printf("The colour is blue");
+        break;
+        case green:
+        printf("The colour is green");
+        break;
+        default:
+        printf("invalid input"); 
+    }
+    return 0;
+}
+
+
+//enum to get a msg for direction
+#include <stdio.h>
+enum directions{east,west,north,south};
+int main(){
+    int n;
+    printf("Enter a number(0-3):");
+    scanf("%d",&n);
+    switch(n){
+        case east:
+        printf("The sun rises in the East");
+        break;
+        case west:
+        printf("The sun sets in west ");
+        break;
+        case north:
+        printf("We hav Delhi in the north");
+        break;
+        case south:
+        printf("We hav TN in the south");
+        break;
+        default:
+        printf("invalid input"); 
+    }
+    return 0;
+}
+
+
+//enum to get the value of december
+#include<stdio.h>
+enum months{jan,feb,mar,apr,may,jun,jul,aug,sept,oct,nov,dec};
+int main(){
+    printf("The value of dec is %d",dec);
+return 0;
+}
+
+
+//typedef for decclaring variables
+#include<stdio.h>
+typedef int fl;
+int main(){
+int a = 1;
+int b = 2;
+printf("a:%d\n",a);
+printf("b:%d\n",b);
+return 0;
+}
+
+
+//typedef to find average of two numbers in float
+#include<stdio.h>
+typedef float fl;
+int main(){
+float a = 6;
+float b = 4;
+printf("average :%f\n",((a+b)/2));
+return 0;
+}
+
+
+//Typedef and struct for student details
+#include<stdio.h>
+#include <string.h>
+typedef struct{
+    char name[10];
+    int rollno;
+    int grade;
+}student;
+int main(){
+    student n1,n2;
+scanf("%s",&n1.name);
+scanf("%d",&n1.rollno);
+scanf("%d",&n1.grade);
+printf("Student name is:%s\n",n1.name);
+printf("Student roll no is:%d\n",n1.rollno);
+printf("Student grade is:%d\n",n1.grade);
+return 0;
+}
+
+
+//Typedef and struct for Employee details
+#include<stdio.h>
+#include<string.h>
+typedef struct{
+    char name[10];
+    int id;
+    int age;
+}employee;
+int main(){
+    employee n1,n2;
+scanf("%s",&n1.name);
+scanf("%d",&n1.id);
+scanf("%d",&n1.age);
+printf("Employee name is:%s\n",n1.name);
+printf("Employee id is:%d\n",n1.id);
+printf("Employee age is:%d\n",n1.age);
+return 0;
+}
+
+
+//to get array of 5 numbers using typedef
+#include<stdio.h>
+typedef int intarr[5];
+int main(){
+    intarr arr;
+    int i;
+    for(i=0;i<5;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<5;i++){
+        printf("%d\n",arr[i]);
+    }
+return 0;
+}
+
+
+//Macros to find square of the number
+#include<stdio.h>
+#define Sqr (n*n)
+int main(){
+    int n;
+    scanf("%d",&n);
+    printf("The square is %d",Sqr);
+return 0;
+}
+
+
+//Macros to find maximum of two numbers
+#include<stdio.h>
+#define MAX(a,b) ((a>b)?(a):(b))
+int main(){
+    int a,b;
+    scanf("%d",&a);
+  scanf("%d",&b);
+        printf("The greater number is:%d\n",MAX(a,b));
+return 0;
+}
+
+
+//Macros to find minimum of two numbers
+#include<stdio.h>
+#define Min(a,b) ((a<b)?(a):(b))
+int main(){
+    int a,b;
+    scanf("%d",&a);
+  scanf("%d",&b);
+        printf("The minimum number is:%d\n",Min(a,b));
+return 0;
+}
+
+
+//celsius to fahrenheit using Macro
+#include<stdio.h>
+#define CtoF(c) (((c)*9/5)+32)
+int main(){
+    float c;
+    scanf("%f",&c);
+    printf("The required fahrenheit is:%f\n",CtoF(c));
+return 0;
+}
+
+
+//To find odd or even using Macro
+#include<stdio.h>
+#define OorE (n%2==0? "Even" : "Odd")
+int main(){
+    int n;
+    char Even;
+    char Odd;
+    scanf("%d",&n);
+    printf("The given number is:%s\n",OorE);
+return 0;
+}
