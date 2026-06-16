@@ -1,0 +1,97 @@
+// To get even number from 1 to 50
+
+#include <stdio.h>
+int main()
+{
+ int i;
+ for(i=0;i<=50;i+=2){
+ printf("%d\n",i);}
+    return 0;
+}
+
+
+// Employee details using structures
+
+#include <stdio.h>
+#include <string.h>
+struct details{
+    int id;
+    char name[20];
+    int age;
+}n1,n2;
+
+int main()
+{
+  scanf("%d",&n1.id);
+   scanf("%s",&n1.name);
+    scanf("%d",&n1.age);
+    printf("%d\n",n1.id);
+     printf("%s\n",n1.name);
+      printf("%d\n",n1.age);
+   
+    return 0;
+}
+
+
+//string fuctions
+
+#include <stdio.h>
+#include<string.h>
+
+int main()
+{
+ char str[20] = "hello";
+ char str1[20] = "hi mounica";
+ char str2[20];
+ printf("length of the string is:%d\n",strlen(str));
+ printf("str2:%s\n",strcpy(str2,str));
+ if(str==str1){
+     printf("equal");
+    }else{
+        printf("not equal");
+    }
+    return 0;
+}
+
+
+//palindrome number
+
+#include <stdio.h>
+
+int main()
+{
+ int n,rev,rem,org;
+ rev=0;
+ scanf("%d",&n);
+ org = n;
+ while(n!=0){
+     rem=n%10;
+     rev=rev*10 + rem;
+     n=n/10;
+ }
+     if(org==rev){
+         printf("palindrome number");
+     }else{
+         printf("Not a palindrome number");
+     }
+ 
+    return 0;
+}
+
+
+//factorial of a number
+
+#include <stdio.h>
+int factorial(int n){
+    if(n==1){
+    return 1;}
+    else{
+        return(n*factorial(n-1));
+    }
+}
+int main()
+
+{
+
+   printf("factorial:%d",factorial(5));
+}
