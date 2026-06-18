@@ -1,0 +1,148 @@
+//To get student details
+#include<stdio.h>
+struct student{
+int rollno;
+int mark;
+char name[30];
+};
+int main(){
+struct student e[5];
+int i;
+    for(i=0;i<5;i++){
+            scanf("%d %s %d", &e[i].rollno,&e[i].name,&e[i].mark);
+        printf( "Your roll no is:%d\nYour name is:%s\n", e[i].rollno,e[i].name);
+        printf( "Your name is:%d\n", e[i].mark);
+    }
+    return 0;
+}*/
+
+#include<stdio.h>
+#include<string.h>
+FILE*m;
+int main(){
+char n;
+m=fopen("student details.txt","r");
+while((n = fgetc(m)) != EOF){
+printf("%c",n);
+}
+fclose(m);
+return 0;
+}
+
+
+//To find count of characters,words,lines
+#include<stdio.h>
+int main(){
+FILE*m;
+char ch;
+int n=0,w=0,s =0;
+m=fopen("mouni.txt","r");
+while((ch=fgetc(m)) != EOF){
+    n++;
+    if(ch==' ' || ch=='\n')
+        w++;
+    if(ch=='\n')
+        s++;
+}
+if(n>0)
+    w++;
+    printf("The number of characters are:%d\n",n);
+    printf("The number of words are:%d\n",w);
+    printf("The number of lines are:%d\n",s);
+    fclose(m);
+    return 0;
+}
+
+
+//copy contents of one file to another
+#include<stdio.h>
+int main(){
+    FILE*c,*d;
+    char e;
+c=fopen("mouni.txt","r");
+d=fopen("create.txt","w");
+while((e=getc(c)) != EOF)
+fputc(e,d);
+fclose(c);
+fclose(d);
+return 0;
+}
+
+
+//to print employee details
+#include<stdio.h>
+struct employee{
+int id;
+int age;
+char name[30];
+int salary;
+};
+int main(){
+struct employee e[3];
+int i;
+    for(i=0;i<3;i++){
+            scanf("%d %d", &e[i].id,&e[i].age);
+    scanf("%s %d",e[i].name,&e[i].salary);
+        printf( "Your id is:%d\nYour age is:%d\n", e[i].id,e[i].age);
+        printf( "Your name is:%s\nYour salary is:%d\n", e[i].name, e[i].salary);
+    }
+    return 0;
+}
+
+#include<stdio.h>
+#include<string.h>
+FILE*m;
+int main(){
+char n;
+m=fopen("employee details.txt","r");
+while((n = fgetc(m)) != EOF){
+printf("%c",n);
+}
+fclose(m);
+return 0;
+}*/
+
+
+//To find a word and the number of times it occurs in a file
+#include<stdio.h>
+#include<string.h>
+int main(){
+FILE *m;
+char n[30],o[50];
+int p=0;
+m = fopen("mouni.txt","r");
+scanf("%s",&n);
+while(fscanf(m,"%s",o)!= EOF){
+    if(strcmp(n,o)==0){
+        p++;
+}}
+printf("%s occurs %d time`",n,p);
+fclose(m);
+return 0;
+}
+
+//to merge files
+#include<stdio.h>
+#include<string.h>
+int main(){
+    FILE *m, *n, *o;
+char p,q,r;
+m = fopen("employee details.txt","r");
+n = fopen("student details.txt","r");
+o = fopen("append.txt","w");
+
+while((p=fgetc(m)) != EOF){
+    fputc(p,o);
+}
+
+while((q=fgetc(n)) != EOF){
+    fputc(q,o);
+}
+
+    fclose(m);
+    fclose(n);
+    fclose(o);
+
+    return 0;}
+
+
