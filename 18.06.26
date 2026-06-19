@@ -1,0 +1,104 @@
+//realloc
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+int *ptr,i;
+ptr=(int*)malloc(sizeof(int));
+printf("Enter 3 numbers:\n");
+for(i=0;i<3;i++){
+scanf("%d",&ptr[i]);
+};
+printf("Enter 2 numbers:\n");
+ptr=(int*)realloc(ptr,2*sizeof(int));
+for(i=3;i<5;i++){
+scanf("%d",&ptr[i]);
+};
+printf("The 5 numbers are:\n");
+for(i=0;i<5;i++){
+printf("%d\n",ptr[i]);
+};
+free(ptr);
+return 0;
+}
+
+
+//malloc
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+int *ptr,i;
+ptr=(int*)malloc(sizeof(int));
+printf("Enter the three numbers:");
+for(i=0;i<3;i++){
+    scanf("%d",&ptr[i]);
+};
+printf("The three numbers are:");
+for(i=0;i<3;i++)
+    {printf("%d",ptr[i]);};
+
+free(ptr);
+return 0;
+}
+
+
+//calloc
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+int *ptr,i;
+ptr=(int*)calloc(3,sizeof(int));
+printf("Enter the three numbers:");
+for(i=0;i<3;i++){
+    scanf("%d",&ptr[i]);
+};
+printf("The three numbers are:");
+for(i=0;i<3;i++)
+    {printf("%d",ptr[i]);};
+
+free(ptr);
+return 0;
+}
+
+
+//employee largest salary
+#include <stdio.h>
+
+struct employee {
+    int id;
+    int salary;
+};
+
+void employer() {
+    FILE *g;
+    struct employee e[5];
+    g = fopen("employee.txt", "w");
+    int i;
+    for (i = 0; i < 5; i++) {
+        printf("Enter employee %d ID and salary: ", i + 1);
+        scanf("%d %d", &e[i].id, &e[i].salary);
+        fprintf(g, "%d %d\n", e[i].id, e[i].salary);
+    }
+    fclose(g);
+}
+
+int large() {
+    FILE *g;
+    struct employee e;
+    g = fopen("employee.txt", "r");
+    int maxSalary = 0;
+
+    while (fscanf(g, "%d %d", &e.id, &e.salary) == 2) {
+        if (e.salary > maxSalary) {
+            maxSalary = e.salary;
+        }
+    }
+
+    fclose(g);
+    return maxSalary;
+}
+
+int main() {
+    employer();
+    printf("Largest Salary = %d\n", large());
+    return 0;
+}
