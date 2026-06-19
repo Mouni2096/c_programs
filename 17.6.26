@@ -146,3 +146,54 @@ while((q=fgetc(n)) != EOF){
     return 0;}
 
 
+//to find average of marks:
+#include<stdio.h>
+    #include<string.h>
+    struct student{
+    int rollno;
+    int mark;
+    }n1,n2;
+
+    void read(){
+        FILE *m;
+    m=fopen("student.txt","w");
+    scanf("%d",&n1.rollno);
+    scanf("%d",&n1.mark);
+    printf("The roll no is:%d\n",n1.rollno);
+    printf("The mark is:%d\n",n1.mark);
+    scanf("%d",&n2.rollno);
+    scanf("%d",&n2.mark);
+    printf("The roll no is:%d\n",n2.rollno);
+    printf("The mark is:%d\n",n2.mark);
+    fprintf(m,"The roll no of n1 is:%d\n The mark of n1 is:%d\nThe roll no of n2 is:%d\n The mark of n2 is:%d\n",n1.rollno,n1.mark,n2.rollno,n2.mark);
+    }
+    void write(){
+    FILE *m;
+    m = fopen("student.txt","r");
+    while(fscanf(m,"%d%d%d%d",&n1.rollno,&n1.mark,&n2.rollno,&n2.mark) != EOF){
+    fprintf(m,"The roll no of n1 is:%d\n The mark of n1 is:%d\nThe roll no of n2 is:%d\n The mark of n2 is:%d\n",n1.rollno,n1.mark,n2.rollno,n2.mark);
+    }fclose(m);
+    }
+
+    void average(){
+    FILE *m;
+    int sum=0;
+    float average=0;
+    fopen("student.txt","r");
+    while(fscanf(m,"%d%d%d%d",&n1.rollno,&n1.mark,&n2.rollno,&n2.mark) != EOF){
+        sum = n1.mark + n2.mark;
+    }
+    average = sum/2;
+    printf("average:%f",average);
+    }
+    int main(){
+    read();
+    write();
+    average();
+    return 0;
+    }
+
+
+
+
+
